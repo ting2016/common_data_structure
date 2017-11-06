@@ -31,7 +31,7 @@ namespace yao{
             template <typename TT> friend class Queue;
         };
 
-//doublelinked list based queue
+//doublelinked list based queue, this is the real implementation of std::list
         template <typename T>
         class Deque{
         public:
@@ -207,7 +207,7 @@ namespace yao{
             T m_data[QUEUE_CAPACITY];
         };
 
-//circule queue with dynamically allocated capacity
+//circule queue with dynamically allocated capacity, this is the real implementation of std::deque
         template <typename T>
         class Queue2{
         public:

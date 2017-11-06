@@ -41,6 +41,7 @@ namespace yao{
             }
 
         private:
+		//after adding a new node at the end of a heap, reheap the new heap
             void bottom_up_heapify(int pos){
                 if(m_data.size() < 2){  //do not need to heapify, only one element
                     return;
@@ -55,7 +56,7 @@ namespace yao{
                     }
                 }
             }
-
+		//assume pos's right child and left child are both heapified, 
             void top_down_heapify(int pos){
                 if(m_data.size() < 2){  //do not need to heapify
                     return;
@@ -80,7 +81,7 @@ namespace yao{
 
                 if(largest != pos){
                     std::swap(m_data[pos], m_data[largest]);
-                    bottom_up_heapify(largest);
+                    top_down_heapify(largest);
                 }
             }
 
